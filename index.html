@@ -11,11 +11,13 @@
         <div class="main">
             <div class="left">
                 <p>Gems <br /><span class="gem-cost blue-text">10000</span></p>
-                <img src="./upgrades/gem.png" alt="" class="gem-image" onclick="incrementGem()" draggable="false">
+                <div class="gem-img-container">
+                    <img src="./upgrades/gem.png" alt="" class="gem-image" onclick="incrementGem(event)" draggable="false">
+                </div>
             </div>
             <div class="right">
                 <!-- inicio da função de upgrade-->
-                <div class="upgrade" onclick="buyClicker()">
+                <div class="upgrade" onclick="buyUpgrade('clicker')">
                     <div class="left-section">
                         <img src="./upgrades/clicker.png" alt="" class="upgrade-img">
                     </div>
@@ -35,7 +37,7 @@
                 </div>
                 <!-- final da função de upgrade-->
                 <!-- inicio da função de upgrade-->
-                <div class="upgrade" onclick="buyPickaxe()">
+                <div class="upgrade" onclick="buyUpgrade('pickaxe')">
                     <div class="left-section">
                         <img src="./upgrades/pickaxe.png" alt="" class="upgrade-img">
                     </div>
@@ -55,7 +57,7 @@
                 </div>
                 <!-- final da função de upgrade-->
                 <!-- inicio da função de upgrade-->
-                <div class="upgrade" onclick="buyMiner()">
+                <div class="upgrade" onclick="buyUpgrade('miner')">
                     <div class="left-section">
                         <img src="./upgrades/miner.png" alt="" class="upgrade-img">
                     </div>

@@ -27,6 +27,9 @@ body {
 	color: rgb(0, 3, 208);
 	font-weight: 700;
 }
+.gem-img-container {
+	position: relative;
+}
 .gem-image {
 	width: 320px;
 }
@@ -101,6 +104,9 @@ body {
 	justify-content: center;
 	font-weight: bold;
 	font-size: 22px;
+}
+.fade-up {
+	animation: fade-up 1s;
 }
 @keyframes fade-up {
 	0%{
