@@ -89,54 +89,18 @@ function buyUpgrade(upgrade) {
 
         mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.gemMultiplier).toFixed(2))
         mu.increase.innerHTML = mu.parsedIncrease
-        gpc += mu.parsedIncrease
+
         mu.parsedCost *= mu.costMultiplier;
         mu.cost.innerHTML = Math.round(mu.parsedCost)
+
+        if (mu.name === 'clicker') {
+            gpc += mu.parsedIncrease
+        } else {
+            gps += mu.parsedIncrease
+        }
     }
 }
 
-function buyClicker() { //comprar o upgrade clicker
-    if (parsedGem >= parsedClickerCost) {
-        gem.innerHTML = Math.round(parsedGem -= parsedClickerCost);
-        
-        clickerLevel.innerHTML ++  // função de adicionar mais poder de click ao comprar upgrade
-
-        parsedClickerIncrease= parseFloat((parsedClickerIncrease * 1.03).toFixed(2))
-        clickerIncrease.innerHTML = parsedClickerIncrease
-        gpc += parsedClickerIncrease
-
-        parsedClickerCost *= 1.18;
-        clickerCost.innerHTML = Math.round(parsedClickerCost)
-    }
-}
-function buyPickaxe() { //comprar o upgrade Pickaxe
-    if (parsedGem >= parsedPickaxeCost) {
-        gem.innerHTML = Math.round(parsedGem -= parsedPickaxeCost);
-        
-        pickaxeLevel.innerHTML ++  // função de adicionar mais poder de click ao comprar upgrade
-
-        parsedPickaxeIncrease= parseFloat((parsedPickaxeIncrease * 1.03).toFixed(2))
-        pickaxeIncrease.innerHTML = parsedPickaxeIncrease
-        gps += parsedPickaxeIncrease
-
-        parsedPickaxeCost *= 1.18;
-        pickaxeCost.innerHTML = Math.round(parsedPickaxeCost)
-    }
-}
-function buyMiner() { //comprar o upgrade Miner
-    if (parsedGem >= parsedMinerCost) {
-        gem.innerHTML = Math.round(parsedGem -= parsedMinerCost);
-        
-        minerLevel.innerHTML ++  // função de adicionar mais poder de click ao comprar upgrade
-
-        parsedMinerIncrease= parseFloat((parsedMinerIncrease * 1.03).toFixed(2))
-        minerIncrease.innerHTML = parsedMinerIncrease
-        gps += parsedMinerIncrease
-
-        parsedMinerCost *= 1.18;
-        minerCost.innerHTML = Math.round(parsedMinerCost)
-    }
-}
 setInterval(() => {
     parsedGem += gps / 10
     gem.innerHTML = Math.round(parsedGem)
