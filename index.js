@@ -1,23 +1,6 @@
 let gem = document.querySelector('.gem-cost') //definiu a gema
 let parsedGem = parseFloat(gem.innerHTML) 
 
-let clickerCost = document.querySelector('.clicker-cost') //definiu o custo do clicker
-let parsedClickerCost = parseFloat(clickerCost.innerHTML)
-let clickerLevel = document.querySelector('.clicker-level') //definiu o nivel do clicker
-let clickerIncrease = document.querySelector('.clicker-increase') //definiu o aumento do clicker
-let parsedClickerIncrease = parseFloat(clickerIncrease.innerHTML)
-
-let pickaxeCost = document.querySelector('.pickaxe-cost') //definiu o custo da pickaxe
-let parsedPickaxeCost = parseFloat(pickaxeCost.innerHTML)
-let pickaxeLevel = document.querySelector('.pickaxe-level') //definiu o nivel da pickaxe
-let pickaxeIncrease = document.querySelector('.pickaxe-increase') //definiu o aumento da pickaxe
-let parsedPickaxeIncrease = parseFloat(pickaxeIncrease.innerHTML)
-
-let minerCost = document.querySelector('.miner-cost') //definiu o custo do miner
-let parsedMinerCost = parseFloat(minerCost.innerHTML)
-let minerLevel = document.querySelector('.miner-level') //definiu o nivel do miner
-let minerIncrease = document.querySelector('.miner-increase') //definiu o aumento do miner
-let parsedMinerIncrease = parseFloat(minerIncrease.innerHTML)
 
 let gpcText = document.getElementById('gpc-text') //definiu o texto do gps e gpc
 let gpsText = document.getElementById('gps-text') 
@@ -45,8 +28,8 @@ const upgrades = [
         increase: document.querySelector('.pickaxe-increase'),
         parsedIncrease: parseFloat(document.querySelector('.pickaxe-increase').innerHTML),
         level: document.querySelector('.pickaxe-level'),
-        gemMultiplier: 1.025,
-        costMultiplier: 1.12,
+        gemMultiplier: 1.03,
+        costMultiplier: 1.112,
     },
     {
         name: 'miner',
@@ -55,8 +38,18 @@ const upgrades = [
         increase: document.querySelector('.miner-increase'),
         parsedIncrease: parseFloat(document.querySelector('.miner-increase').innerHTML),
         level: document.querySelector('.miner-level'),
-        gemMultiplier: 1.025,
-        costMultiplier: 1.12,
+        gemMultiplier: 1.035,
+        costMultiplier: 1.11,
+    },
+    {
+        name: 'factory',
+        cost: document.querySelector('.factory-cost'),
+        parsedCost: parseFloat(document.querySelector('.factory-cost').innerHTML),
+        increase: document.querySelector('.factory-increase'),
+        parsedIncrease: parseFloat(document.querySelector('.factory-increase').innerHTML),
+        level: document.querySelector('.factory-level'),
+        gemMultiplier: 1.04,
+        costMultiplier: 1.10,
     }
 ]
 
