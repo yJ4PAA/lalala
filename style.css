@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
-
-
 body { 
 	display: grid;
 	place-items: center;
@@ -21,7 +18,6 @@ body {
 	display: flex;
 	gap: 200px;
 }
-
 .left {
 	text-align: center;
 	font-size: 30px;
@@ -31,21 +27,17 @@ body {
 	color: rgb(0, 3, 208);
 	font-weight: 700;
 }
-
 .gem-image {
 	width: 320px;
 }
-
 .gem-image:hover {
 	opacity: 0.9;
 	cursor: pointer;
 }
-
 .gem-image:active {
 	opacity: 0.8;
 	transform: scale(1.02);
 }
-
 .mid-section h4{
 	margin: 0;
 	margin-bottom: 20px;
@@ -54,7 +46,6 @@ body {
 .mid-section p{
 	margin: 0;
 }
-
 .upgrade {
 	display: flex;
 	align-items: center;
@@ -68,14 +59,12 @@ body {
 	margin-bottom: 20px;
 	background-color: rgb(70, 70, 70);
 }
-
 .cost-info {
 	display: flex;
 	gap: 5px;
 	height: 20px;
 	align-items: center;
 }
-
 .next-level-info {
 	position: absolute;
 	right: -100px;
@@ -85,20 +74,15 @@ body {
 	text-align: center;
 	display: none;
 }
-
 .upgrade:hover .next-level-info {
 	display: block;
 }
-
 .upgrade-img {
 	width: 50px;
 }
-
-
 .gem-img {
 	width: 20px;
 }
-
 .statistics {
 	position: absolute;
 	bottom: 0;
@@ -111,7 +95,6 @@ body {
 	left: 50%;
 	transform: translate(-50%);
 }
-
 .texts {
 	display: flex;
 	gap: 100px;
@@ -119,7 +102,6 @@ body {
 	font-weight: bold;
 	font-size: 22px;
 }
-
 @keyframes fade-up {
 	0%{
 		transform: translate(0);
