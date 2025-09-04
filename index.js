@@ -36,7 +36,7 @@ function buyUpgrade(upgrade) {
         if (u.name === upgrade) return u
     })
 
-    if (parsedGem >= mu.parsedCost) {
+    if (mu && parsedGem >= mu.parsedCost) {
         gem.innerHTML = Math.round(parsedGem -= mu.parsedCost);
 
         mu.level.innerHTML ++
