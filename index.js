@@ -12,6 +12,7 @@ let gemImgContainer = document.querySelector('.gem-img-container')
 let gpc = 1;
 let gps = 0;
 
+/*
 const upgrades = [
     {
         name: 'clicker',
@@ -54,7 +55,7 @@ const upgrades = [
         costMultiplier: 1.10,
     }
 ]
-
+*/
 function createUpgrades() {
     const upgradesContainer = document.getElementById('upgrades-container')
     const template = document.getElementById('upgrade-template').textContent
