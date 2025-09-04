@@ -94,6 +94,37 @@ function buyUpgrade(upgrade) {
     }
 }
 
+function save() {
+    localStorage.clear()
+    upgrades.map((upgrade) => {
+        const obj = JSON.stringify({
+            parsedLevel: parseFloat(upgrade.level.innerHTML),
+            parsedCost: upgrade.parsedCost,
+            parsedIncrease: upgrade.parsedIncrease
+        })
+        localStorage.setItem(upgrade.name, obj)
+    })
+
+    localStorage.setItem('gpc', JSON.stringify(gpc))
+    localStorage.setItem('gps', JSON.stringify(gps))
+    localStorage.setItem('gem', JSON.stringify(parsedGem))
+}
+
+function load() {
+    upgrades.map((upgrade) => {
+        const savedValues = JSON.parse(localStorage.getItem(upgrade.name))
+
+        upgrade.parsedCost = savedValues.parsedCost
+        upgrade.parsedIncrease = savedValues.parsedIncrease
+        upgrade.level.innerHTML = Math.round(upgrade.parsedCost)
+        upgrade.increase.innerHTML = upgrade.parsedIncrease
+    })
+    gpc = JSON.parse(localStorage.getItem('gpc'))
+    gps = JSON.parse(localStorage.getItem('gps'))
+    parsedGem = JSON.parse(localStorage.getItem('gem'))
+    gem.innerHTML = Math.round(parsedGem)
+}
+
 setInterval(() => {
     parsedGem += gps / 10
     gem.innerHTML = Math.round(parsedGem)
