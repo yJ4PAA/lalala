@@ -59,7 +59,7 @@ function incrementGem(event) {  //função de adição ao clicar na gema
     const y = event.offsetY
     const div = document.createElement('div')
     div.innerHTML = `+${Math.round(gpc)}`
-    div.style.cssText = `color: white; position: absolute; top ${y}px; left: ${x}px; pointer-events: none;`
+    div.style.cssText = `color: white; position: absolute; top: ${y}px; left: ${x}px; font-size: 15px; pointer-events: none;`
     gemImgContainer.appendChild(div)
     div.classList.add('fade-up')
     timeout(div)
