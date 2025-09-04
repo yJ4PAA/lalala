@@ -116,7 +116,8 @@ function load() {
 
         upgrade.parsedCost = savedValues.parsedCost
         upgrade.parsedIncrease = savedValues.parsedIncrease
-        upgrade.level.innerHTML = Math.round(upgrade.parsedCost)
+        upgrade.level.innerHTML = savedValues.parsedLevel
+        upgrade.cost.innerHTML = Math.round(upgrade.parsedCost)
         upgrade.increase.innerHTML = upgrade.parsedIncrease
     })
     gpc = JSON.parse(localStorage.getItem('gpc'))
