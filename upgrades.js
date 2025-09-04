@@ -26,7 +26,7 @@ export const upgrades = [
         parsedIncrease: parseFloat(document.querySelector('.clicker-increase').innerHTML),
         level: document.querySelector('.clicker-level'),
         gemMultiplier: 1.025,
-        costMultiplier: 1.12,
+        costMultiplier: 1.10,
     },
     {
         name: 'pickaxe',
@@ -56,6 +56,16 @@ export const upgrades = [
         parsedIncrease: parseFloat(document.querySelector('.factory-increase').innerHTML),
         level: document.querySelector('.factory-level'),
         gemMultiplier: 1.04,
-        costMultiplier: 1.10,
-    }
+        costMultiplier: 1.12,
+    },
+    {
+        name: 'potion',
+        cost: document.querySelector('.potion-cost'),
+        parsedCost: parseFloat(document.querySelector('.potion-cost').innerHTML),
+        increase: document.querySelector('.potion-increase'),
+        parsedIncrease: parseFloat(document.querySelector('.potion-increase').innerHTML),
+        level: document.querySelector('.potion-level'),
+        gemMultiplier: 1.05,
+        costMultiplier: 1.13,
+    },
 ]
