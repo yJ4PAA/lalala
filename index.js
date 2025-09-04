@@ -1,4 +1,4 @@
-import { defaultValues } from "./defaultValues.js";
+import { upgrades } from "./upgrades.js";
 
 let gem = document.querySelector('.gem-cost') //definiu a gema
 let parsedGem = parseFloat(gem.innerHTML) 
@@ -11,23 +11,6 @@ let gemImgContainer = document.querySelector('.gem-img-container')
 
 let gpc = 1;
 let gps = 0;
-
-
-function createUpgrades() {
-    const upgradesContainer = document.getElementById('upgrades-container')
-    const template = document.getElementById('upgrade-template').textContent
-    defaultValues.forEach((obj) => {
-        let html = template;
-
-        Object.keys(obj).forEach((key) => {
-            const regex = new RegExp(`{{${key}}}`, 'g');
-            html = html.replace(regex, obj[key])
-        });
-        upgradesContainer.innerHTML += html
-    })
-}
-
-createUpgrades()
 
 
 function incrementGem(event) {  //função de adição ao clicar na gema
