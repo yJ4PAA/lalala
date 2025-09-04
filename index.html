@@ -15,6 +15,31 @@
                     <img src="./upgrades/gem.png" alt="" class="gem-image" onclick="incrementGem(event)" draggable="false">
                 </div>
             </div>
+            <script id="upgrade-template" type="text/template">
+                <div class="upgrade" onclick="buyUpgrade('{{name}}')">
+                    <div class="left-section">
+                        <img src="{{image}}" alt="" class="upgrade-img">
+                    </div>
+                    <div class="mid-section">
+                        <h4>{{name}}</h4>
+                        <div class="cost-info">
+                            <p>Cost: <span class="{{name}}-cost">{{cost}}</span></p>
+                            <img src="./upgrades/gem.png" alt="" class="gem-img">
+                        </div>
+                    </div>
+                    <div class="right-section">Level <span class="{{name}}-level">0</span></div>
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="{{name}}-increase">{{increase}}</span>gems <br />per click
+                        </p>
+                    </div>
+                </div>
+            </script>
+           
+            <div class="right" id="upgrades-container">
+
+            </div>
+
             <div class="right">
                 <!-- inicio da função de upgrade-->
                 <div class="upgrade" onclick="buyUpgrade('clicker')">
@@ -115,6 +140,6 @@
             
         </div>
     </section>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

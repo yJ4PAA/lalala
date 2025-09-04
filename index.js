@@ -1,3 +1,5 @@
+import { defaultValues } from "./defaultValues.js";
+
 let gem = document.querySelector('.gem-cost') //definiu a gema
 let parsedGem = parseFloat(gem.innerHTML) 
 
@@ -52,6 +54,23 @@ const upgrades = [
         costMultiplier: 1.10,
     }
 ]
+
+function createUpgrades() {
+    const upgradesContainer = document.getElementById('upgrades-container')
+    const template = document.getElementById('upgrade-template').textContent
+    defaultValues.forEach((obj) => {
+        let html = template;
+
+        Object.keys(obj).forEach((key) => {
+            const regex = new RegExp(`{{${key}}}`, 'g');
+            html = html.replace(regex, obj[key])
+        });
+        upgradesContainer.innerHTML += html
+    })
+}
+
+createUpgrades()
+
 
 function incrementGem(event) {  //função de adição ao clicar na gema
     gem.innerHTML = Math.round(parsedGem += gpc)
@@ -132,3 +151,8 @@ setInterval(() => {
     gpcText.innerHTML = Math.round(gpc)
     gpsText.innerHTML = Math.round(gps)
 },100) 
+
+window.incrementGem = incrementGem
+window.buyUpgrade = buyUpgrade
+window.save = save
+window.load = load
