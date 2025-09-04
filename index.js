@@ -94,7 +94,7 @@ function buyUpgrade(upgrade) {
     }
 }
 
-function save() {
+function save () {
     localStorage.clear()
     upgrades.map((upgrade) => {
         const obj = JSON.stringify({
@@ -110,7 +110,7 @@ function save() {
     localStorage.setItem('gem', JSON.stringify(parsedGem))
 }
 
-function load() {
+function load () {
     upgrades.map((upgrade) => {
         const savedValues = JSON.parse(localStorage.getItem(upgrade.name))
 
