@@ -1,3 +1,4 @@
+import { defaultValues } from "./defaultValues.js";
 import { upgrades } from "./upgrades.js";
 
 let gem = document.querySelector('.gem-cost') //definiu a gema
