@@ -15,8 +15,11 @@ let gps = 0;
 
 const bgm = new Audio('./sounds/bgm.mp3')
 bgm.volume = 0.2
-bgm.loop = true
-bgm.play()
+document.addEventListener('click', () => {
+    bgm.loop = true
+    bgm.play()
+}, { once: true })
+
 
 
 function incrementGem(event) {  //função de adição ao clicar na gema
