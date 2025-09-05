@@ -14,7 +14,7 @@ let gpc = 1;
 let gps = 0;
 
 const bgm = new Audio('./sounds/bgm.mp3')
-bgm.volume = 0.4
+bgm.volume = 0.2
 document.addEventListener('click', () => {
     bgm.loop = true
     bgm.play()
