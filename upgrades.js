@@ -25,6 +25,23 @@ export const upgrades = [
         increase: document.querySelector('.clicker-increase'),
         parsedIncrease: parseFloat(document.querySelector('.clicker-increase').innerHTML),
         level: document.querySelector('.clicker-level'),
+        powerUps: [
+            {
+                name: '2x clicker',
+                description: 'double your clicking power',
+                multiplier: 2,
+            },
+            {
+                name: '3x clicker',
+                description: 'triple your clicking power',
+                multiplier: 3,
+            },
+            {
+                name: '4x clicker',
+                description: 'quadruple your clicking power',
+                multiplier: 4,
+            }
+        ],
         gemMultiplier: 1.025,
         costMultiplier: 1.10,
     },
@@ -35,6 +52,23 @@ export const upgrades = [
         increase: document.querySelector('.pickaxe-increase'),
         parsedIncrease: parseFloat(document.querySelector('.pickaxe-increase').innerHTML),
         level: document.querySelector('.pickaxe-level'),
+        powerUps: [
+            {
+                name: '2x pickaxe',
+                description: 'double your pickaxe efficiency',
+                multiplier: 2,
+            },
+            {
+                name: '3x pickaxe',
+                description: 'triple your pickaxe efficiency',
+                multiplier: 3,
+            },
+            {
+                name: '4x pickaxe',
+                description: 'quadruple your pickaxe efficiency',
+                multiplier: 4,
+            }
+        ],
         gemMultiplier: 1.03,
         costMultiplier: 1.112,
     },
@@ -69,3 +103,6 @@ export const upgrades = [
         costMultiplier: 1.13,
     },
 ]
+
+
+export const powerUpsIntervals = [10, 20, 30, 50, 80, 100, 150, 200, 250, 300, 350]
