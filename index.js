@@ -13,13 +13,14 @@ let gemImgContainer = document.querySelector('.gem-img-container')
 let gpc = 1;
 let gps = 0;
 
-const bgm = new Audio('./lalala/sounds/bgm.mp3')
+const bgm = new Audio('./sounds/bgm.mp3')
 bgm.volume = 0.2
-
+bgm.loop = true
+bgm.play()
 
 
 function incrementGem(event) {  //função de adição ao clicar na gema
-    const clickSound = new Audio('./lalala/sounds/click.mp3')
+    const clickSound = new Audio('./sounds/click.mp3')
     clickSound.volume = 0.1
     clickSound.play()
 
@@ -45,7 +46,7 @@ function buyUpgrade(upgrade) {
     })
 
     if (parsedGem >= mu.parsedCost) {
-        const UpgradeSound = new Audio('./lalala/sounds/upgrade.mp3')
+        const UpgradeSound = new Audio('./sounds/upgrade.mp3')
         UpgradeSound.play()
         UpgradeSound.volume = 0.1;
         gem.innerHTML = Math.round(parsedGem -= mu.parsedCost);
@@ -103,7 +104,6 @@ setInterval(() => {
     gem.innerHTML = Math.round(parsedGem)
     gpcText.innerHTML = Math.round(gpc)
     gpsText.innerHTML = Math.round(gps)
-    bgm.play()
 },100) 
 
 window.incrementGem = incrementGem
