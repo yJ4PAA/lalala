@@ -1,5 +1,5 @@
 import { defaultValues } from "./defaultValues.js";
-import { upgrades } from "./upgrades.js";
+import { powerUpsIntervals, upgrades } from "./upgrades.js";
 
 let gem = document.querySelector('.gem-cost') //definiu a gema
 let parsedGem = parseFloat(gem.innerHTML) 
@@ -48,11 +48,25 @@ function buyUpgrade(upgrade) {
         if (u.name === upgrade) return u
     })
 
+    const upgradeDiv = document.getElementById(`${mu.name}-upgrade`)
+    const nextLevelDiv = document.getElementById(`${mu.name}-next-level`)
+    const nextLevelP = document.getElementById(`${mu.name}-next-p`)
+
     if (parsedGem >= mu.parsedCost) {
         const UpgradeSound = new Audio('./sounds/upgrade.mp3')
         UpgradeSound.play()
         UpgradeSound.volume = 0.1;
         gem.innerHTML = Math.round(parsedGem -= mu.parsedCost);
+
+        let index = powerUpsIntervals.indexOf(parseFloat(mu.level.innerHTML))
+
+        if ( index !== -1) {
+            upgradeDiv.style.cssText = `border-color: blue`;
+            nextLevelDiv.style.cssText = `background-color: rgb(7, 90, 197); font-weight: bold`;
+            nextLevelP.innerText = mu.powerUps[index].description
+
+            mu.cost.innerHTML = Math.round(mu.parsedCost * 2.5 * 1.0004 ** parseFloat(mu.level.innerHTML))
+        }
 
         mu.level.innerHTML ++
 
