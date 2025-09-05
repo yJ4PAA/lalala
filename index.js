@@ -61,7 +61,7 @@ function buyUpgrade(upgrade) {
         let index = powerUpsIntervals.indexOf(parseFloat(mu.level.innerHTML))
 
         if ( index !== -1) {
-            upgradeDiv.style.cssText = `border-color: black`;
+            upgradeDiv.style.borderColor: 'black';
             nextLevelDiv.style.cssText = `background-color: rgb(90, 90, 90); font-weight: normal`;
             mu.cost.innerHTML = Math.round(mu.parsedCost *= mu.costMultiplier)
             
