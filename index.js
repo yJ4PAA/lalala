@@ -61,26 +61,47 @@ function buyUpgrade(upgrade) {
         let index = powerUpsIntervals.indexOf(parseFloat(mu.level.innerHTML))
 
         if ( index !== -1) {
+            upgradeDiv.style.cssText = `border-color: white`;
+            nextLevelDiv.style.cssText = `background-color: rgb(90, 90, 90); font-weight: normal`;
+            mu.cost.innerHTML = Math.round(mu.parsedCost *= mu.costMultiplier)
+            
+            if ( mu.name === 'clicker') {
+                gpc *= mu.powerUps[index].multiplier
+                nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
+            } else {
+                gps -= mu.power
+                mu.power *= mu.powerUps[index].multiplier
+                gps += mu.power
+                nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
+            }
+        }
+            mu.level.innerHTML ++
+            index = powerUpsIntervals.indexOf(parseFloat(mu.level.innerHTML))
+
+        if ( index !== -1) {
             upgradeDiv.style.cssText = `border-color: blue`;
             nextLevelDiv.style.cssText = `background-color: rgb(7, 90, 197); font-weight: bold`;
             nextLevelP.innerText = mu.powerUps[index].description
 
             mu.cost.innerHTML = Math.round(mu.parsedCost * 2.5 * 1.0004 ** parseFloat(mu.level.innerHTML))
+        } else{
+            mu.cost.innerHTML = Math.round(mu.parsedCost *= mu.costMultiplier)
+            mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.gemMultiplier).toFixed(2))
+
+            if (mu.name === 'clicker') nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
+            else  nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
         }
-
-        mu.level.innerHTML ++
-
-        mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.gemMultiplier).toFixed(2))
-        mu.increase.innerHTML = mu.parsedIncrease
-
-        mu.parsedCost *= mu.costMultiplier;
-        mu.cost.innerHTML = Math.round(mu.parsedCost)
-
+    
         if (mu.name === 'clicker') {
             gpc += mu.parsedIncrease
         } else {
-            gps += mu.parsedIncrease
+            gps -= mu.power
+            mu.power += mu.parsedIncrease
+            gps += mu.power
         }
+
+        if (mu.name === 'clicker') gpx += mu.parsedIncrease
+        else {}
     }
 }
 

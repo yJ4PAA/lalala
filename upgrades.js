@@ -69,6 +69,7 @@ export const upgrades = [
                 multiplier: 4,
             }
         ],
+        power: 0,
         gemMultiplier: 1.03,
         costMultiplier: 1.112,
     },
@@ -79,6 +80,7 @@ export const upgrades = [
         increase: document.querySelector('.miner-increase'),
         parsedIncrease: parseFloat(document.querySelector('.miner-increase').innerHTML),
         level: document.querySelector('.miner-level'),
+        power: 0,
         gemMultiplier: 1.035,
         costMultiplier: 1.11,
     },
@@ -89,6 +91,7 @@ export const upgrades = [
         increase: document.querySelector('.factory-increase'),
         parsedIncrease: parseFloat(document.querySelector('.factory-increase').innerHTML),
         level: document.querySelector('.factory-level'),
+        power: 0,
         gemMultiplier: 1.04,
         costMultiplier: 1.12,
     },
@@ -99,8 +102,9 @@ export const upgrades = [
         increase: document.querySelector('.potion-increase'),
         parsedIncrease: parseFloat(document.querySelector('.potion-increase').innerHTML),
         level: document.querySelector('.potion-level'),
-        gemMultiplier: 1.05,
-        costMultiplier: 1.13,
+        power: 0,
+        gemMultiplier: 1.045,
+        costMultiplier: 1.096,
     },
 ]
 
