@@ -93,9 +93,8 @@ function buyUpgrade(upgrade) {
         }
         if (mu.name === 'clicker') gpc += mu.parsedIncrease
         else {
-            gps -= mu.power
             mu.power += mu.parsedIncrease
-            gps += mu.power
+            gps += mu.parsedIncrease
         }
     }
 }
