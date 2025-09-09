@@ -69,9 +69,7 @@ function buyUpgrade(upgrade) {
                 gpc *= mu.powerUps[index].multiplier
                 nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
             } else {
-                gps -= mu.power
                 mu.power *= mu.powerUps[index].multiplier
-                gps += mu.power
                 nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
             }
         }
@@ -91,10 +89,11 @@ function buyUpgrade(upgrade) {
             if (mu.name === 'clicker') nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per click`
             else  nextLevelP.innerHTML = `+${mu.parsedIncrease} gems per second`
         }
-        if (mu.name === 'clicker') gpc += mu.parsedIncrease
+        if (mu.name === 'clicker') {gpc += mu.parsedIncrease}
         else {
+            gps -= mu.power
             mu.power += mu.parsedIncrease
-            gps += mu.parsedIncrease
+            gps += mu.power
         }
     }
 }
